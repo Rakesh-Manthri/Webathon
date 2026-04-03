@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Challenges - Webthon</title>
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  
+  <!-- Custom Shadcn UI CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            border: "hsl(var(--border))",
+            input: "hsl(var(--input))",
+            ring: "hsl(var(--ring))",
+            background: "hsl(var(--background))",
+            foreground: "hsl(var(--foreground))",
+            primary: {
+              DEFAULT: "hsl(var(--primary))",
+              foreground: "hsl(var(--primary-foreground))",
+            },
+            secondary: {
+              DEFAULT: "hsl(var(--secondary))",
+              foreground: "hsl(var(--secondary-foreground))",
+            },
+            destructive: {
+              DEFAULT: "hsl(var(--destructive))",
+              foreground: "hsl(var(--destructive-foreground))",
+            },
+            muted: {
+              DEFAULT: "hsl(var(--muted))",
+              foreground: "hsl(var(--muted-foreground))",
+            },
+            accent: {
+              DEFAULT: "hsl(var(--accent))",
+              foreground: "hsl(var(--accent-foreground))",
+            },
+            popover: {
+              DEFAULT: "hsl(var(--popover))",
+              foreground: "hsl(var(--popover-foreground))",
+            },
+            card: {
+              DEFAULT: "hsl(var(--card))",
+              foreground: "hsl(var(--card-foreground))",
+            },
+          },
+          borderRadius: {
+            lg: "var(--radius)",
+            md: "calc(var(--radius) - 2px)",
+            sm: "calc(var(--radius) - 4px)",
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="selection:bg-primary selection:text-primary-foreground min-h-screen flex flex-col antialiased bg-background">
+  
+  <!-- Navbar -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 bg-background/80 backdrop-blur-md border-b border-border shadow-sm">
+    <div class="container mx-auto px-4 md:px-6 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 group">
+        <div class="bg-primary text-primary-foreground p-1.5 rounded-lg group-hover:bg-indigo-600 transition-colors">
+          <i data-lucide="code-2" class="w-6 h-6"></i>
+        </div>
+        <span class="font-bold text-xl tracking-tight">Webthon</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8">
+        <ul class="flex items-center gap-6">
+          <li><a href="index.html" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Home</a></li>
+          <li><a href="problems.html" class="text-sm font-medium text-foreground hover:text-primary transition-colors">Challenges</a></li>
+          <li><a href="index.html#timeline" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Timeline</a></li>
+        </ul>
+        <div class="flex items-center gap-4">
+          <button id="theme-toggle" class="shad-btn shad-btn-ghost h-10 w-10 p-0 rounded-full">
+            <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+            <i data-lucide="moon" class="w-5 h-5 block dark:hidden text-foreground"></i>
+          </button>
+          <a href="#" class="shad-btn shad-btn-primary h-10 px-6 rounded-full text-sm">Register</a>
+        </div>
+      </nav>
+
+      <!-- Mobile Nav Toggle -->
+      <div class="flex md:hidden gap-2 items-center">
+        <button id="theme-toggle-mobile" class="shad-btn shad-btn-ghost h-10 w-10 p-0 rounded-full">
+            <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+            <i data-lucide="moon" class="w-5 h-5 block dark:hidden text-foreground"></i>
+        </button>
+        <button id="mobile-menu-btn" class="shad-btn shad-btn-ghost h-10 w-10 p-0">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-[300px] bg-background border-l border-border transform translate-x-full transition-transform duration-300 shadow-2xl pl-6 py-6 pr-4 flex flex-col gap-6">
+    <div class="flex justify-between items-center w-full">
+      <span class="font-bold text-lg">Menu</span>
+      <button id="mobile-menu-close" class="shad-btn shad-btn-ghost h-8 w-8 p-0">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+    <ul class="flex flex-col gap-4">
+      <li><a href="index.html" class="block text-lg font-medium p-2 rounded-md hover:bg-muted mobile-link text-muted-foreground">Home</a></li>
+      <li><a href="problems.html" class="block text-lg font-medium p-2 rounded-md hover:bg-muted mobile-link text-foreground">Challenges</a></li>
+      <li><a href="index.html#timeline" class="block text-lg font-medium p-2 rounded-md hover:bg-muted mobile-link text-muted-foreground">Timeline</a></li>
+    </ul>
+    <div class="h-px w-full bg-border"></div>
+    <a href="#" class="shad-btn shad-btn-primary h-12 px-6 rounded-full w-full">Register Now</a>
+  </div>
+
+  <main class="flex-1 pt-32 pb-24">
+    <!-- Problems Section -->
+    <section id="problems">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="max-w-3xl mb-16 problems-header opacity-0">
+          <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">Challenge Tracks</h1>
+          <p class="text-xl text-muted-foreground">
+            Choose a problem statement that sparks your interest. You can pick one of our official tracks or bring your own wild card idea.
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-3 mb-12" id="filter-buttons-container">
+          <button class="filter-btn shad-btn shad-btn-primary rounded-full px-6" data-category="All">All Tracks</button>
+          <button class="filter-btn shad-btn shad-btn-outline rounded-full px-6 bg-background/50" data-category="Space">Space</button>
+          <button class="filter-btn shad-btn shad-btn-outline rounded-full px-6 bg-background/50" data-category="Sustainability">Sustainability</button>
+          <button class="filter-btn shad-btn shad-btn-outline rounded-full px-6 bg-background/50" data-category="Education">Education</button>
+          <button class="filter-btn shad-btn shad-btn-outline rounded-full px-6 bg-background/50" data-category="Miscellaneous">Miscellaneous</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="problem-cards-container">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-muted/30 border-t border-border pt-16 pb-8 mt-auto">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        <div class="col-span-1 md:col-span-1">
+          <a href="index.html" class="flex items-center gap-2 mb-4">
+            <div class="bg-primary text-primary-foreground p-1 rounded-md">
+              <i data-lucide="code-2" class="w-5 h-5"></i>
+            </div>
+            <span class="font-bold text-lg tracking-tight">Webthon</span>
+          </a>
+          <p class="text-muted-foreground text-sm leading-relaxed max-w-xs">
+            Empowering the next generation of developers to build intelligent, scalable, and inclusive web applications.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-4 text-foreground">Quick Links</h3>
+          <ul class="space-y-3">
+            <li><a href="#" class="text-sm text-muted-foreground hover:text-primary transition-colors">About the Event</a></li>
+            <li><a href="problems.html" class="text-sm text-muted-foreground hover:text-primary transition-colors">Challenges</a></li>
+            <li><a href="index.html#timeline" class="text-sm text-muted-foreground hover:text-primary transition-colors">Schedule</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-4 text-foreground">Event Coordinators</h3>
+          <ul class="space-y-3">
+            <li class="text-sm text-muted-foreground">Rakesh Manthri</li>
+            <li class="text-sm text-muted-foreground">Sai Revanth</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-4 text-foreground">Contact Us</h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="tel:8331856658" class="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
+                <i data-lucide="phone" class="w-4 h-4"></i> 8331856658
+              </a>
+            </li>
+            <li>
+              <a href="mailto:manthrirs06@gmail.com" class="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
+                <i data-lucide="mail" class="w-4 h-4"></i> manthrirs06@gmail.com
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Custom Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>
