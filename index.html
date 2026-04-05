@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Webthon - Build the Future</title>
-  
+
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+
   <!-- Custom Shadcn UI CSS -->
   <link rel="stylesheet" href="styles.css">
 
@@ -81,8 +84,9 @@
     }
   </script>
 </head>
+
 <body class="selection:bg-primary selection:text-primary-foreground min-h-screen flex flex-col antialiased">
-  
+
   <!-- Navbar -->
   <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 bg-transparent">
     <div class="container mx-auto px-4 md:px-6 flex items-center justify-between">
@@ -90,31 +94,26 @@
         <div class="bg-primary text-primary-foreground p-1.5 rounded-lg group-hover:bg-indigo-600 transition-colors">
           <i data-lucide="code-2" class="w-6 h-6"></i>
         </div>
-        <span class="font-bold text-xl tracking-tight">Webthon</span>
+        <span class="font-bold text-xl tracking-tight">Webathon</span>
       </a>
 
       <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-8">
         <ul class="flex items-center gap-6">
-          <li><a href="index.html" class="text-sm font-medium text-foreground hover:text-primary transition-colors">Home</a></li>
-          <li><a href="problems.html" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Challenges</a></li>
-          <li><a href="index.html#timeline" class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Timeline</a></li>
+          <li><a href="index.html"
+              class="text-sm font-medium text-foreground hover:text-primary transition-colors">Home</a></li>
+          <li><a href="coming-soon.html"
+              class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Challenges</a></li>
+          <li><a href="index.html#timeline"
+              class="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">Timeline</a></li>
         </ul>
         <div class="flex items-center gap-4">
-          <button id="theme-toggle" class="shad-btn shad-btn-ghost h-10 w-10 p-0 rounded-full">
-            <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
-            <i data-lucide="moon" class="w-5 h-5 block dark:hidden text-foreground"></i>
-          </button>
           <a href="#" class="shad-btn shad-btn-primary h-10 px-6 rounded-full text-sm">Register</a>
         </div>
       </nav>
 
       <!-- Mobile Nav Toggle -->
       <div class="flex md:hidden gap-2 items-center">
-        <button id="theme-toggle-mobile" class="shad-btn shad-btn-ghost h-10 w-10 p-0 rounded-full">
-            <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
-            <i data-lucide="moon" class="w-5 h-5 block dark:hidden text-foreground"></i>
-        </button>
         <button id="mobile-menu-btn" class="shad-btn shad-btn-ghost h-10 w-10 p-0">
           <i data-lucide="menu"></i>
         </button>
@@ -123,7 +122,8 @@
   </header>
 
   <!-- Mobile Menu Drawer (Hidden by default) -->
-  <div id="mobile-menu" class="fixed inset-y-0 right-0 z-50 w-[300px] bg-background border-l border-border transform translate-x-full transition-transform duration-300 shadow-2xl pl-6 py-6 pr-4 flex flex-col gap-6">
+  <div id="mobile-menu"
+    class="fixed inset-y-0 right-0 z-50 w-[300px] bg-background border-l border-border transform translate-x-full transition-transform duration-300 shadow-2xl pl-6 py-6 pr-4 flex flex-col gap-6">
     <div class="flex justify-between items-center w-full">
       <span class="font-bold text-lg">Menu</span>
       <button id="mobile-menu-close" class="shad-btn shad-btn-ghost h-8 w-8 p-0">
@@ -132,22 +132,27 @@
     </div>
     <ul class="flex flex-col gap-4">
       <li><a href="index.html" class="block text-lg font-medium p-2 rounded-md hover:bg-muted mobile-link">Home</a></li>
-      <li><a href="problems.html" class="block text-lg font-medium p-2 rounded-md hover:bg-muted mobile-link text-muted-foreground">Challenges</a></li>
-      <li><a href="index.html#timeline" class="block text-lg font-medium p-2 rounded-md hover:bg-muted mobile-link text-muted-foreground">Timeline</a></li>
+      <li><a href="coming-soon.html"
+          class="block text-lg font-medium p-2 rounded-md hover:bg-muted mobile-link text-muted-foreground">Challenges</a>
+      </li>
+      <li><a href="index.html#timeline"
+          class="block text-lg font-medium p-2 rounded-md hover:bg-muted mobile-link text-muted-foreground">Timeline</a>
+      </li>
     </ul>
     <div class="h-px w-full bg-border"></div>
     <a href="#" class="shad-btn shad-btn-primary h-12 px-6 rounded-full w-full">Register Now</a>
   </div>
 
   <main class="flex-1">
-    
+
     <!-- Hero Section -->
     <section id="home" class="relative w-full h-screen overflow-hidden bg-background">
       <div id="canvas-container" class="opacity-60"></div>
-      
+
       <div class="relative z-10 flex flex-col items-center justify-center w-full h-full text-center px-4 md:px-6">
         <div class="hero-content max-w-4xl space-y-6 opacity-0 translate-y-8">
-          <div class="inline-block px-4 py-1.5 mb-2 border border-primary/20 rounded-full bg-primary/5 backdrop-blur-sm">
+          <div
+            class="inline-block px-4 py-1.5 mb-2 border border-primary/20 rounded-full bg-primary/5 backdrop-blur-sm">
             <span class="text-sm font-medium text-primary">Acumen IT</span>
           </div>
 
@@ -158,14 +163,18 @@
               Webathon
             </span>
           </h1>
-          
+
           <p class="mx-auto max-w-[600px] text-lg md:text-xl text-muted-foreground mt-4">
-            Bringing together the brightest minds to solve complex challenges and build the future using modern web technologies.
+            Bringing together the brightest minds to solve complex challenges and build the future using modern web
+            technologies.
           </p>
 
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
-            <a href="#" class="shad-btn shad-btn-primary h-12 px-8 text-base rounded-full w-full sm:w-auto">Register Now</a>
-            <a href="problems.html" class="shad-btn shad-btn-outline h-12 px-8 text-base rounded-full w-full sm:w-auto bg-background/50 backdrop-blur-sm">View Challenges</a>
+            <a href="#" class="shad-btn shad-btn-primary h-12 px-8 text-base rounded-full w-full sm:w-auto">Register
+              Now</a>
+            <a href="coming-soon.html"
+              class="shad-btn shad-btn-outline h-12 px-8 text-base rounded-full w-full sm:w-auto bg-background/50 backdrop-blur-sm">View
+              Challenges</a>
           </div>
         </div>
       </div>
@@ -182,22 +191,25 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- Card 1 -->
-        <div class="shad-card bg-card/50 backdrop-blur border-border/50 hover:border-primary/50 transition-colors p-6 flex flex-col gap-4 highlight-card opacity-0 translate-y-8">
+        <div
+          class="shad-card bg-card/50 backdrop-blur border-border/50 hover:border-primary/50 transition-colors p-6 flex flex-col gap-4 highlight-card opacity-0 translate-y-8">
           <div class="p-3 bg-muted rounded-lg w-fit">
-             <i data-lucide="zap" class="w-6 h-6 text-yellow-500"></i>
+            <i data-lucide="zap" class="w-6 h-6 text-yellow-500"></i>
           </div>
           <div>
             <h3 class="font-semibold leading-none tracking-tight text-xl mb-2">Skill Development</h3>
             <p class="text-sm text-muted-foreground leading-relaxed">
-              Enhance your technical abilities by tackling complex, real-world IT challenges in a competitive environment.
+              Enhance your technical abilities by tackling complex, real-world IT challenges in a competitive
+              environment.
             </p>
           </div>
         </div>
 
         <!-- Card 2 -->
-        <div class="shad-card bg-card/50 backdrop-blur border-border/50 hover:border-primary/50 transition-colors p-6 flex flex-col gap-4 highlight-card opacity-0 translate-y-8">
+        <div
+          class="shad-card bg-card/50 backdrop-blur border-border/50 hover:border-primary/50 transition-colors p-6 flex flex-col gap-4 highlight-card opacity-0 translate-y-8">
           <div class="p-3 bg-muted rounded-lg w-fit">
-             <i data-lucide="users" class="w-6 h-6 text-blue-500"></i>
+            <i data-lucide="users" class="w-6 h-6 text-blue-500"></i>
           </div>
           <div>
             <h3 class="font-semibold leading-none tracking-tight text-xl mb-2">Networking</h3>
@@ -208,9 +220,10 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="shad-card bg-card/50 backdrop-blur border-border/50 hover:border-primary/50 transition-colors p-6 flex flex-col gap-4 highlight-card opacity-0 translate-y-8">
+        <div
+          class="shad-card bg-card/50 backdrop-blur border-border/50 hover:border-primary/50 transition-colors p-6 flex flex-col gap-4 highlight-card opacity-0 translate-y-8">
           <div class="p-3 bg-muted rounded-lg w-fit">
-             <i data-lucide="trophy" class="w-6 h-6 text-primary"></i>
+            <i data-lucide="trophy" class="w-6 h-6 text-primary"></i>
           </div>
           <div>
             <h3 class="font-semibold leading-none tracking-tight text-xl mb-2">Prizes & Recognition</h3>
@@ -232,7 +245,8 @@
       </div>
 
       <div class="relative max-w-4xl mx-auto pl-4 md:pl-0">
-        <div class="absolute left-[20px] md:left-1/2 top-4 bottom-4 w-0.5 bg-border -translate-x-1/2 rounded-full"></div>
+        <div class="absolute left-[20px] md:left-1/2 top-4 bottom-4 w-0.5 bg-border -translate-x-1/2 rounded-full">
+        </div>
         <div class="space-y-12" id="timeline-events-container">
           <!-- Populated by JS -->
         </div>
@@ -244,8 +258,8 @@
   <!-- Footer -->
   <footer class="bg-muted/30 border-t border-border pt-16 pb-8 mt-12">
     <div class="container mx-auto px-4 md:px-6">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-        <div class="col-span-1 md:col-span-1">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+        <div>
           <a href="#" class="flex items-center gap-2 mb-4">
             <div class="bg-primary text-primary-foreground p-1 rounded-md">
               <i data-lucide="code-2" class="w-5 h-5"></i>
@@ -260,31 +274,46 @@
           <h3 class="font-semibold mb-4 text-foreground">Quick Links</h3>
           <ul class="space-y-3">
             <li><a href="#" class="text-sm text-muted-foreground hover:text-primary transition-colors">About the Event</a></li>
-            <li><a href="problems.html" class="text-sm text-muted-foreground hover:text-primary transition-colors">Challenges</a></li>
+            <li><a href="coming-soon.html" class="text-sm text-muted-foreground hover:text-primary transition-colors">Challenges</a></li>
             <li><a href="index.html#timeline" class="text-sm text-muted-foreground hover:text-primary transition-colors">Schedule</a></li>
           </ul>
         </div>
         <div>
-          <h3 class="font-semibold mb-4 text-foreground">Event Coordinators</h3>
-          <ul class="space-y-3">
-            <li class="text-sm text-muted-foreground">Rakesh Manthri</li>
-            <li class="text-sm text-muted-foreground">Sai Revanth</li>
-          </ul>
-        </div>
-        <div>
           <h3 class="font-semibold mb-4 text-foreground">Contact Us</h3>
-          <ul class="space-y-3">
-            <li>
-              <a href="tel:8331856658" class="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
-                <i data-lucide="phone" class="w-4 h-4"></i> 8331856658
-              </a>
-            </li>
-            <li>
-              <a href="mailto:manthrirs06@gmail.com" class="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
-                <i data-lucide="mail" class="w-4 h-4"></i> manthrirs06@gmail.com
-              </a>
-            </li>
-          </ul>
+
+          <div class="space-y-6">
+            <div>
+              <p class="text-sm font-medium text-foreground mb-2">Sai Revanth</p>
+              <ul class="space-y-2">
+                <li>
+                  <a href="tel:+918309890157" class="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
+                    <i data-lucide="phone" class="w-4 h-4"></i> +91 83098 90157
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:sairevanth040@gmail.com" class="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
+                    <i data-lucide="mail" class="w-4 h-4"></i> sairevanth040@gmail.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <p class="text-sm font-medium text-foreground mb-2">Rakesh Manthri</p>
+              <ul class="space-y-2">
+                <li>
+                  <a href="tel:+918331856658" class="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
+                    <i data-lucide="phone" class="w-4 h-4"></i> +91 8331856658
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:manthrirs06@gmail.com" class="text-sm text-muted-foreground hover:text-primary transition-colors flex items-center gap-2">
+                    <i data-lucide="mail" class="w-4 h-4"></i> manthrirs06@gmail.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -299,4 +328,5 @@
   <script src="js/animations.js"></script>
   <script type="module" src="js/three-bg.js"></script>
 </body>
+
 </html>

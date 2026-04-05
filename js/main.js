@@ -2,37 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize Lucide icons
   lucide.createIcons();
 
-  // --- Theme Toggle Logic ---
-  const themeToggle = document.getElementById('theme-toggle');
-  const themeToggleMobile = document.getElementById('theme-toggle-mobile');
-  const htmlEl = document.documentElement;
-  
-  // Set initial theme
-  const getPreferredTheme = () => {
-    if (localStorage.getItem('webthon-theme')) {
-      return localStorage.getItem('webthon-theme');
-    }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  };
 
-  const setTheme = (theme) => {
-    if (theme === 'dark') {
-      htmlEl.classList.add('dark');
-    } else {
-      htmlEl.classList.remove('dark');
-    }
-    localStorage.setItem('webthon-theme', theme);
-  };
-
-  setTheme(getPreferredTheme());
-
-  const toggleTheme = () => {
-    const isDark = htmlEl.classList.contains('dark');
-    setTheme(isDark ? 'light' : 'dark');
-  };
-
-  themeToggle?.addEventListener('click', toggleTheme);
-  themeToggleMobile?.addEventListener('click', toggleTheme);
 
   // --- Mobile Menu Logic ---
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');

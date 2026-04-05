@@ -2,28 +2,28 @@ document.addEventListener('DOMContentLoaded', () => {
   // Problems Data
   const problems = [
     // Space
-    { title: "Night Sky Object Planner", category: "Space", desc: "A tool where stargazers enter their location and date. Lists visible planets, constellations, and objects with rise/set times and visibility ratings.", diff: "Medium" },
-    { title: "Space Mission Timeline", category: "Space", desc: "Interactive, scrollable timeline of past and upcoming space missions from agencies like ISRO, NASA, and SpaceX.", diff: "Easy" },
-    { title: "Meteor Shower Alert", category: "Space", desc: "Dashboard showing upcoming meteor showers with a 'Visibility Rating' based on local moon phase and predicted cloud cover.", diff: "Hard" },
-    { title: "Multi-World Clock", category: "Space", desc: "A time-syncing tool displaying current time on Earth, Mars (Sols), and the Moon simultaneously.", diff: "Medium" },
+    { title: "Night Sky Object Planner", category: "Space", desc: "A tool where stargazers enter their location and date. Lists visible planets, constellations, and objects with rise/set times and visibility ratings." },
+    { title: "Space Mission Timeline", category: "Space", desc: "Interactive, scrollable timeline of past and upcoming space missions from agencies like ISRO, NASA, and SpaceX." },
+    { title: "Meteor Shower Alert", category: "Space", desc: "Dashboard showing upcoming meteor showers with a 'Visibility Rating' based on local moon phase and predicted cloud cover." },
+    { title: "Multi-World Clock", category: "Space", desc: "A time-syncing tool displaying current time on Earth, Mars (Sols), and the Moon simultaneously." },
 
     // Sustainable Development
-    { title: "Carbon Footprint Calculator", category: "Sustainability", desc: "Calculate monthly carbon footprint, benchmark against average, and suggest reduction tips.", diff: "Easy" },
-    { title: "Household Water Tracker", category: "Sustainability", desc: "Log daily water usage by activity. Compares against limits, shows trends, and suggests water-saving actions.", diff: "Medium" },
-    { title: "Renewable Energy Estimator", category: "Sustainability", desc: "Input roof size and sunny hours to calculate potential solar generation and the investment Payback Period.", diff: "Hard" },
-    { title: "Local Eco-Event Organizer", category: "Sustainability", desc: "Platform to create and join Clean-up Drives or Planting Events featuring a participant Impact Leaderboard.", diff: "Medium" },
+    { title: "Carbon Footprint Calculator", category: "Sustainability", desc: "Calculate monthly carbon footprint, benchmark against average, and suggest reduction tips." },
+    { title: "Household Water Tracker", category: "Sustainability", desc: "Log daily water usage by activity. Compares against limits, shows trends, and suggests water-saving actions." },
+    { title: "Renewable Energy Estimator", category: "Sustainability", desc: "Input roof size and sunny hours to calculate potential solar generation and the investment Payback Period." },
+    { title: "Local Eco-Event Organizer", category: "Sustainability", desc: "Platform to create and join Clean-up Drives or Planting Events featuring a participant Impact Leaderboard." },
 
     // Education
-    { title: "Live Polling & Analytics", category: "Education", desc: "Instructor creates polls for live sessions. Dashboard shows live response distribution and exports reports.", diff: "Hard" },
-    { title: "AI-Enhanced Quiz Builder", category: "Education", desc: "Paste text to programmatically extract keywords and automatically generate multiple-choice quizzes.", diff: "Hard" },
-    { title: "Focus Session Manager", category: "Education", desc: "Pomodoro-style timer tracking distractions (clicks away) and displaying productivity analytics.", diff: "Easy" },
-    { title: "Group Study Room", category: "Education", desc: "Users join a room with a shared task list, progress board, and simulated 'who is studying what' tracker.", diff: "Medium" },
+    { title: "Live Polling & Analytics", category: "Education", desc: "Instructor creates polls for live sessions. Dashboard shows live response distribution and exports reports." },
+    { title: "AI-Enhanced Quiz Builder", category: "Education", desc: "Paste text to programmatically extract keywords and automatically generate multiple-choice quizzes." },
+    { title: "Focus Session Manager", category: "Education", desc: "Pomodoro-style timer tracking distractions (clicks away) and displaying productivity analytics." },
+    { title: "Group Study Room", category: "Education", desc: "Users join a room with a shared task list, progress board, and simulated 'who is studying what' tracker." },
 
     // Miscellaneous
-    { title: "Medicine Tracker", category: "Miscellaneous", desc: "Track medicines and health symptoms to maintain an interactive health log over time.", diff: "Easy" },
-    { title: "Smart Yield Predictor", category: "Miscellaneous", desc: "Estimate crop yield and expected income while analyzing risk factors and sustainability aspects.", diff: "Hard" },
-    { title: "JWT Interactive Debugger", category: "Miscellaneous", desc: "Decode JWT payloads, verify signatures, and highlight security flaws like the 'alg: none' vulnerability.", diff: "Hard" },
-    { title: "Subscription Tracker", category: "Miscellaneous", desc: "Manage services, input start dates, calculate 'Next Billing Date', and sort by 'Soonest Renewal'.", diff: "Medium" }
+    { title: "Medicine Tracker", category: "Miscellaneous", desc: "Track medicines and health symptoms to maintain an interactive health log over time." },
+    { title: "Smart Yield Predictor", category: "Miscellaneous", desc: "Estimate crop yield and expected income while analyzing risk factors and sustainability aspects." },
+    { title: "JWT Interactive Debugger", category: "Miscellaneous", desc: "Decode JWT payloads, verify signatures, and highlight security flaws like the 'alg: none' vulnerability." },
+    { title: "Subscription Tracker", category: "Miscellaneous", desc: "Manage services, input start dates, calculate 'Next Billing Date', and sort by 'Soonest Renewal'." }
   ];
 
   const problemContainer = document.getElementById('problem-cards-container');
@@ -35,19 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const filtered = filter === 'All' ? problems : problems.filter(p => p.category === filter);
     
     filtered.forEach(p => {
-      let badgeClass = 'shad-badge-outline';
-      if (p.diff === 'Hard') badgeClass = 'shad-badge-destructive';
-      if (p.diff === 'Medium') badgeClass = 'shad-badge-default';
-
       cardsHTML += `
         <div class="shad-card p-6 flex flex-col problem-card opacity-0 translate-y-8 transition-transform hover:-translate-y-1">
           <div class="flex justify-between items-start mb-4">
             <span class="shad-badge shad-badge-secondary">${p.category}</span>
-            <span class="shad-badge ${badgeClass}">${p.diff}</span>
           </div>
           <h3 class="text-xl font-bold mb-2">${p.title}</h3>
-          <p class="text-muted-foreground text-sm flex-1 mb-6">${p.desc}</p>
-          <button class="shad-btn shad-btn-outline w-full py-2">Select Track</button>
+          <p class="text-muted-foreground text-sm flex-1 mb-2">${p.desc}</p>
         </div>
       `;
     });

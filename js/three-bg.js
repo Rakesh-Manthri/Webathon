@@ -33,11 +33,11 @@ if (container) {
   const geometry = new THREE.BufferGeometry();
   geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
-  // Determine material color based on theme
-  const getThemeColor = () => document.documentElement.classList.contains('dark') ? 0x6366f1 : 0x000000;
+  // Static material color for light theme
+  const particleColor = 0x000000;
   let particleMaterial = new THREE.PointsMaterial({
     size: 0.05,
-    color: getThemeColor(),
+    color: particleColor,
     transparent: true,
     opacity: 0.6,
     sizeAttenuation: true
@@ -47,7 +47,7 @@ if (container) {
   
   // Lines
   const lineMaterial = new THREE.LineBasicMaterial({
-    color: getThemeColor(),
+    color: particleColor,
     transparent: true,
     opacity: 0.15
   });
@@ -68,13 +68,7 @@ if (container) {
     targetMouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
   });
 
-  // Watch for theme changes to update color
-  const observer = new MutationObserver(() => {
-    const color = getThemeColor();
-    particleMaterial.color.setHex(color);
-    lineMaterial.color.setHex(color);
-  });
-  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
 
   // Animation Loop
   const animate = () => {
@@ -82,7 +76,7 @@ if (container) {
 
     mouse.lerp(targetMouse, 0.05);
 
-    const posAttr = document.documentElement.classList.contains('dark');
+
     const positions = geometry.attributes.position.array;
     
     for (let i = 0; i < particleCount; i++) {
