@@ -80,9 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Timeline Data
   const events = [
-    { date: "April 6", title: "Registration Opens", status: "completed" },
+    { date: "April 13", title: "Registration Opens", status: "completed" },
     { date: "April 16", title: "Registration Closes", status: "upcoming" },
-    { date: "April 16 (11:30 AM)", title: "Morning Event (Tentative)", status: "upcoming" },
+    { date: "April 16 (11:30 AM - 01:00 PM)", title: "Morning Event", status: "upcoming" },
     { date: "April 16 (3:30 PM)", title: "Prize Distribution", status: "upcoming" },
   ];
 
