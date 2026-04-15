@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: "SP-01",
       title: "Night Sky Object Planner",
       category: "Space",
-      desc: "Build a web tool that helps users identify celestial objects visible from their location on a given date.",
+      desc: "A tool where stargazers enter their location and date. Lists visible planets, constellations, and objects with rise/set times and visibility ratings.",
       features: [
         "Input: Location (city/manual) + Date",
         "Display: Visible planets, constellations, and stars",
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: "SP-02",
       title: "Space Mission Timeline",
       category: "Space",
-      desc: "Create an interactive timeline showcasing past and upcoming space missions.",
+      desc: "Interactive, scrollable timeline of past and upcoming space missions from agencies like ISRO, NASA, and SpaceX.",
       features: [
         "Scrollable timeline UI",
         "Filters: Agency (ISRO, NASA, SpaceX), Mission type, and Year",
@@ -36,9 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       id: "SP-03",
-      title: "Meteor Shower Alert System",
+      title: "Meteor Shower Alert",
       category: "Space",
-      desc: "Develop a dashboard that informs users about upcoming meteor showers and their visibility conditions.",
+      desc: "Dashboard showing upcoming meteor showers with a 'Visibility Rating' based on local moon phase and predicted cloud cover.",
       features: [
         "List of upcoming meteor showers",
         "Visibility rating based on Moon phase logic and Weather/cloud cover",
@@ -52,9 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       id: "SP-04",
-      title: "Multi-World Clock & Calendar",
+      title: "Multi-World Clock",
       category: "Space",
-      desc: "Build a tool that displays synchronized real-time clocks across Earth, Mars, and the Moon.",
+      desc: "A time-syncing tool displaying current time on Earth, Mars (Sols), and the Moon simultaneously.",
       features: [
         "Real-time clocks: Earth (Local), Mars (Sol-based), Moon (Simplified cycle)",
         "Visual display of differences in day duration",
@@ -67,9 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       id: "SD-01",
-      title: "Personal Carbon Footprint Calculator",
+      title: "Carbon Footprint Calculator",
       category: "Sustainability",
-      desc: "Create a calculator that estimates a user’s carbon footprint based on lifestyle inputs.",
+      desc: "Calculate monthly carbon footprint, benchmark against average, and suggest reduction tips.",
       features: [
         "Inputs: Travel, diet, electricity usage, shopping habits",
         "Outputs: Monthly carbon footprint, comparison with averages",
@@ -82,9 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       id: "SD-02",
-      title: "Household Water Usage Tracker",
+      title: "Household Water Tracker",
       category: "Sustainability",
-      desc: "Track and analyze daily household water usage to identify waste.",
+      desc: "Log daily water usage by activity. Compares against limits, shows trends, and suggests water-saving actions.",
       features: [
         "Input usage by category (shower, cooking, etc.)",
         "Monthly trends visualization",
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: "SD-03",
       title: "Renewable Energy Estimator",
       category: "Sustainability",
-      desc: "Estimate solar energy generation potential and financial ROI for a household.",
+      desc: "Input roof size and sunny hours to calculate potential solar generation and the investment Payback Period.",
       features: [
         "Inputs: Roof size (sq ft), sunlight hours",
         "Outputs: Energy generated (kWh), cost savings, and payback period"
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: "SD-04",
       title: "Local Eco-Event Organizer",
       category: "Sustainability",
-      desc: "A platform for users to create, discover, and join local eco-friendly events.",
+      desc: "Platform to create and join Clean-up Drives or Planting Events featuring a participant Impact Leaderboard.",
       features: [
         "CRUD: Create/Join/List events",
         "Leaderboard based on user participation hours"
@@ -125,9 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       id: "ED-01",
-      title: "Live Polling & Analytics Tool",
+      title: "Live Polling & Analytics",
       category: "Education",
-      desc: "A real-time classroom polling system for instant student feedback.",
+      desc: "Instructor creates polls for live sessions. Dashboard shows live response distribution and exports reports.",
       features: [
         "Teacher: Create polls; Student: Join via code",
         "Live results visualization (Bar/Pie charts)",
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: "ED-02",
       title: "AI-Enhanced Quiz Builder",
       category: "Education",
-      desc: "Generate practice quizzes automatically from raw text input.",
+      desc: "Paste text to programmatically extract keywords and automatically generate multiple-choice quizzes.",
       features: [
         "Input text paragraph",
         "Automated keyword extraction and MCQ generation",
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: "ED-03",
       title: "Focus Session Manager",
       category: "Education",
-      desc: "A productivity tool using the Pomodoro technique with distraction tracking.",
+      desc: "Pomodoro-style timer tracking distractions (clicks away) and displaying productivity analytics.",
       features: [
         "Customizable timer cycles (Work/Break)",
         "Distraction tracking (logs clicks away)",
@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: "ED-04",
       title: "Group Study Room",
       category: "Education",
-      desc: "Collaborative study dashboard for mock group environments.",
+      desc: "Users join a room with a shared task list, progress board, and simulated 'who is studying what' tracker.",
       features: [
         "Join room interface (mock or realtime)",
         "Shared task board with progress tracking",
@@ -186,9 +186,9 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       id: "MS-01",
-      title: "Medicine Reminder + Tracker",
+      title: "Medicine Tracker",
       category: "Miscellaneous",
-      desc: "Track medications and daily health symptoms over time.",
+      desc: "Track medicines and health symptoms to maintain an interactive health log over time.",
       features: [
         "Add medicines with specific schedules",
         "Daily symptom logging and adherence tracking visuals"
@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: "MS-02",
       title: "Smart Yield Predictor",
       category: "Miscellaneous",
-      desc: "Estimate agricultural yield, revenue, and potential risk for farmers.",
+      desc: "Estimate crop yield and expected income while analyzing risk factors and sustainability aspects.",
       features: [
         "Inputs: Land size, crop type, season",
         "Outputs: Estimated yield, revenue, and risk score with suggestions"
@@ -216,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: "MS-03",
       title: "JWT Interactive Debugger",
       category: "Miscellaneous",
-      desc: "A tool to decode and analyze JSON Web Tokens for developers.",
+      desc: "Decode JWT payloads, verify signatures, and highlight security flaws like the 'alg: none' vulnerability.",
       features: [
         "Real-time decoding of Header & Payload",
         "Signature verification (mock/real secret checking)",
@@ -229,9 +229,9 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       id: "MS-04",
-      title: "Subscription & Trial Tracker",
+      title: "Subscription Tracker",
       category: "Miscellaneous",
-      desc: "Manage various digital subscriptions and track billing cycles.",
+      desc: "Manage services, input start dates, calculate 'Next Billing Date', and sort by 'Soonest Renewal'.",
       features: [
         "Add services with start date and trial period",
         "Track trial expiry and sort by upcoming payment dates"
