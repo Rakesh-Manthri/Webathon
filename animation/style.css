@@ -1,0 +1,155 @@
+:root {
+  --bg-color: #050508;
+  --text-color: #ffffff;
+  --font-family: 'Outfit', sans-serif;
+  --primary-accent: linear-gradient(135deg, #ffffff 0%, #7e7e8b 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+/* Base Canvas Setup */
+.canvas-container {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at center, #151522 0%, #050508 100%);
+}
+
+canvas {
+  max-width: 100%;
+  max-height: 100%;
+  flex-shrink: 0;
+}
+
+/* An overlay to dim the canvas when text appears */
+.canvas-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(5, 5, 8, 0);
+  transition: background-color 0.5s ease;
+  pointer-events: none;
+}
+
+/* This creates the scroll length required to play the animation */
+.animation-spacer {
+  height: 450vh; /* Play animation over 4.5 viewport heights */
+  width: 100vw;
+  position: relative;
+  z-index: 1; /* Below text but above fixed layer conceptually */
+}
+
+/* Final Content that scrolls up over the pinned canvas after animation ends */
+.final-content {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  padding: 15vh 10vw;
+  background: linear-gradient(to bottom, rgba(5,5,8,0) 0%, rgba(5,5,8,1) 15%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-block {
+  background: rgba(18, 18, 25, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 3rem;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transform: translateY(60px);
+  opacity: 0;
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.text-block.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.main-text {
+  text-align: center;
+  margin-bottom: 5rem;
+  max-width: 800px;
+  width: 100%;
+}
+
+.text-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.3s; }
+.delay-3 { transition-delay: 0.5s; }
+
+.heading {
+  font-size: 4.5rem;
+  font-weight: 900;
+  margin-bottom: 1.2rem;
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  background: var(--primary-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heading-small {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: var(--primary-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subheading {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #a0a0ab;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .final-content {
+    padding: 10vh 5vw;
+  }
+  .heading { font-size: 3rem; }
+  .heading-small { font-size: 1.8rem; }
+  .subheading { font-size: 1.1rem; }
+  .text-block { padding: 2.5rem; }
+}

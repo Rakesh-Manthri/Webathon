@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinematic Animation Experience</title>
+    <meta name="description" content="A premium scroll-based animation experience">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="canvas-container">
+        <canvas id="sequence-canvas"></canvas>
+        <div class="canvas-overlay" id="canvas-overlay"></div>
+    </div>
+
+    <!-- Empty scroll space for the animation to play -->
+    <div class="animation-spacer" id="animation-spacer"></div>
+
+    <!-- Content that appears only after the animation finishes -->
+    <div class="final-content" id="final-content">
+        <div class="text-block main-text">
+            <h1 class="heading">Cinematic Motion</h1>
+            <p class="subheading">You have reached the end of the high-fidelity animation sequence. Now, explore the details.</p>
+        </div>
+        
+        <div class="text-grid">
+            <div class="text-block delay-1">
+                <h2 class="heading-small">Immersive Depth</h2>
+                <p class="subheading">Every frame is perfectly rendered to respond to your scrolling momentum effortlessly.</p>
+            </div>
+            <div class="text-block delay-2">
+                <h2 class="heading-small">Seamless Fluidity</h2>
+                <p class="subheading">An uninterrupted flow combining dynamic high quality content and web optimization.</p>
+            </div>
+            <div class="text-block delay-3">
+                <h2 class="heading-small">Elevated Design</h2>
+                <p class="subheading">Reach the pinnacle of interaction mapping and deliver unforgettable web experiences.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
